@@ -3,7 +3,7 @@ Dockerfile aws kubectl helm tools
 
 # Dockerfile Readme
 
-This repository contains a Dockerfile that sets up a Debian 11.7 (Slim) container with several useful tools installed. The Docker image is designed to be lightweight and includes the following packages:
+This repository contains a Dockerfile that sets up a Debian 12 (Slim) container with several useful tools installed. The Docker image is designed to be lightweight and includes the following packages:
 
 1. Essential utilities: `curl`, `git`, `gnupg2`, `python`, `python3-pip`, `vim`, `wget`, and `unzip`.
 2. PostgreSQL Client: The container includes the PostgreSQL client version 14, allowing you to interact with PostgreSQL databases.
