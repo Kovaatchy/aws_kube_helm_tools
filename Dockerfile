@@ -5,9 +5,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
   apt upgrade -y && \
   apt install -y --no-install-recommends curl git gnupg2 python python3-pip vim wget unzip && \
-  echo "deb http://apt.postgresql.org/pub/repos/apt bullseye-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
-  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
-  apt -y update && apt install -y --no-install-recommends postgresql-client-14 && \
+  # echo "deb http://apt.postgresql.org/pub/repos/apt bullseye-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
+  # wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+  # apt -y update && apt install -y --no-install-recommends postgresql-client-14 && \
   rm -rf /var/lib/apt/lists/*
 
 #awscli
