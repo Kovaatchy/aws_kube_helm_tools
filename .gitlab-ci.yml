@@ -6,6 +6,8 @@ variables:
   TAG_COMMIT: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA
   DOCKER_TLS_CERTDIR: ""
 
+
+
 docker:
   image: docker:stable
   stage: build
@@ -17,7 +19,6 @@ docker:
   script:
     - aws ecr get-login-password --region $AWS_REGION |
       docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-    - docker build --cache-from $TAG_LATEST -t $TAG_COMMIT -t $TAG_LATEST .
+    - docker build -t $TAG_COMMIT .
     - docker push $TAG_COMMIT
-    - docker push $TAG_LATEST
   when: manual
